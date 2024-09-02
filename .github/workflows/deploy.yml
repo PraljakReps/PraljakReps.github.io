@@ -81,6 +81,8 @@ jobs:
           value: ${{ github.repository }}
       - name: Install and Build 🔧
         run: |
+          gem install bundler
+          bundle install
           pip3 install --upgrade jupyter
           export JEKYLL_ENV=production
           bundle exec jekyll build
