@@ -1,14 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - PraljakReps
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - PraljakReps/gene_assembly_toolbox
+  - PraljakReps/Minimalist_Codon_Translation
+  - PraljakReps/ProtWaveVAE
+  - PraljakReps/InfoVAE-SH3_orthology
