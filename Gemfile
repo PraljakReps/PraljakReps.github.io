@@ -28,12 +28,12 @@ group :jekyll_plugins do
     gem 'htmlcompressor'
     gem 'htmlbeautifier'
     gem 'faraday-retry'  # Add this line
-
+    gem 'kramdown-parser-gfm'
 
 end
 
-#group :other_plugins do
-#    gem 'css_parser'
-#    gem 'feedjira'
-#    gem 'httparty'
-#end
+group :other_plugins do
+     gem 'css_parser'
+     gem 'feedjira'
+     gem 'httparty'
+end
