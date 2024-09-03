@@ -110,6 +110,12 @@ jobs:
           npm install -g purgecss
           purgecss -c purgecss.config.js
 
+      # Add the Lychee Link Checker here, after building the site
+      - name: Lychee Link Checker
+        uses: lycheeverse/lychee-action@v1.9.0
+        with:
+          args: --exclude data: --exclude https://www.linkedin.com/ --exclude https://www.sciencedirect.com/
+
       - name: Deploy 🚀
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
