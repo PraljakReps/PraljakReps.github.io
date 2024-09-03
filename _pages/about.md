@@ -26,7 +26,7 @@ social: true # includes social icons at the bottom of the page
 
 Before my doctoral studies, I earned dual degrees in Honors Physics and Mathematics from CSU (2016-2020). During this time, I was honored to receive the [NSF Graduate Research Fellowship](https://artsandsciences.csuohio.edu/news/physics-alum-niksa-praljak-awarded-2020-nsf-graduate-research-fellowship-grf) and was named [COSHP Valedictorian](https://artsandsciences.csuohio.edu/news/four-physics-students-named-among-2020-college-outstanding-seniors). My research journey began in Michael Hinczewski’s [lab](https://hinczlab.org/index.html), where I explored the intersection of Biophysics and computational biology, collaborating with the Umut Gurkan lab on projects related to sickle cell adhesion.
 
-I’m passionate about research at the crossroads of machine learning, evolution, and synthetic biology. I created this site to share my ongoing work and future projects. Given my love for teaching, I’ll also be posting educational [blogs](year-archive) on machine learning and computational biology.
+I’m passionate about research at the crossroads of machine learning, evolution, and synthetic biology. I created this site to share my ongoing work and future projects. Given my love for teaching, I’ll also be posting educational blogs on machine learning and computational biology.
 
 Outside of research, I enjoy cooking, reading, sports, and working out, but most importantly, I cherish time spent with family, especially during the holidays.
 
