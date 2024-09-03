@@ -70,7 +70,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2.2"
+          ruby-version: "3.1.2"
           bundler-cache: true
 
       - name: Update _config.yml ⚙️
@@ -84,8 +84,8 @@ jobs:
       - name: Install Python Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y python3-pip
-          pip3 install --upgrade jupyter
+          pip3 install --upgrade pip
+          pip install jupyter
 
       - name: Install Ruby Dependencies and Build 🔧
         run: |
@@ -105,10 +105,13 @@ jobs:
           purgecss -c purgecss.config.js
 
       - name: Deploy 🚀
-        if: github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
+          branch: gh-pages  # Replace with your deployment branch if needed
+          clean: true  # Cleans the target branch before deploying
+
 
 #jobs:
 #  deploy:
