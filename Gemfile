@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'jekyll', '~> 4.3.3'
+
 group :jekyll_plugins do
     gem 'wdm', '>= 0.1.0'
 #    gem 'classifier-reborn'
-    gem 'jekyll'
     gem 'jekyll-archives'
     gem 'jekyll-diagrams'
     gem 'jekyll-email-protect'
