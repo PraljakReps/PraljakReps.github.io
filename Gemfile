@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 gem 'jekyll', '~> 4.3.3'
 
 group :jekyll_plugins do
-    gem 'wdm', '>= 0.1.0'
-#    gem 'classifier-reborn'
+    gem 'wdm', '>= 0.1.0', platforms: [:mingw, :mswin, :x64_mingw]
+    gem 'listen', '~> 3.0'
+    #    em 'classifier-reborn'
     gem 'jekyll-archives'
     gem 'jekyll-diagrams'
     gem 'jekyll-email-protect'
