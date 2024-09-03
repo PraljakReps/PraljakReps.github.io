@@ -74,7 +74,9 @@ jobs:
           bundler-cache: true
  
       - name: Upgrade RubyGems
-        run: gem update --system 3.5.18
+        run: |
+          gem update --system 3.5.18
+          gem --version
 
 
       - name: Update _config.yml ⚙️
