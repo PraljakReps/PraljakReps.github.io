@@ -114,7 +114,7 @@ jobs:
       - name: Lychee Link Checker
         uses: lycheeverse/lychee-action@v1.9.0
         with:
-          args: --exclude data: --exclude https://www.linkedin.com/ --exclude https://www.sciencedirect.com/
+          args: --exclude "data:" --exclude "https://www.linkedin.com/" --exclude "https://www.sciencedirect.com/"
 
       - name: Deploy 🚀
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
