@@ -17,7 +17,7 @@ _config.yml
 _includes/
 _layouts/
 _news/
+_pages/
 
 # Ignore specific files in GitHub workflows
 .github/workflows/
-
