@@ -9,3 +9,15 @@ assets/plotly/demo.html
 lighthouse_results/**
 _posts/2015-10-20-math.md
 _sass/font-awesome/*.scss
+
+# Ignore specific files
+_config.yml
+
+# Ignore specific directories and their contents
+_includes/
+_layouts/
+_news/
+
+# Ignore specific files in GitHub workflows
+.github/workflows/
+
