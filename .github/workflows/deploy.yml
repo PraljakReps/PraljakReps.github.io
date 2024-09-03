@@ -86,7 +86,7 @@ jobs:
           bundle install --jobs 4 --retry 3
           pip3 install --upgrade jupyter
           export JEKYLL_ENV=production
-          bundle exec jekyll build --baseurl "" --verbose 
+          bundle exec jekyll build --baseurl "" --verbose --trace
       - name: Fix Permission (if needed)
         run: |
           chmod a+x bin/*
