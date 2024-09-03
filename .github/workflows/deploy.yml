@@ -62,16 +62,17 @@ permissions:
 
 jobs:
   deploy:
-    # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2.2"
           bundler-cache: true
+
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
@@ -79,14 +80,21 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
-      - name: Install and Build 🔧
+
+      - name: Install Python Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          pip3 install --upgrade jupyter
+
+      - name: Install Ruby Dependencies and Build 🔧
         run: |
           gem install bundler
           bundle config set --local path 'vendor/bundle'
           bundle install --jobs 4 --retry 3
-          pip3 install --upgrade jupyter
           export JEKYLL_ENV=production
           bundle exec jekyll build --baseurl "" --verbose --trace
+
       - name: Fix Permission (if needed)
         run: |
           chmod a+x bin/*
@@ -95,8 +103,50 @@ jobs:
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
+
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
+
+#jobs:
+#  deploy:
+#    # available images: https://github.com/actions/runner-images#available-images
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout 🛎️
+#        uses: actions/checkout@v4
+#      - name: Setup Ruby
+#        uses: ruby/setup-ruby@v1
+#        with:
+#          ruby-version: "3.2.2"
+#          bundler-cache: true
+#      - name: Update _config.yml ⚙️
+#        uses: fjogeleit/yaml-update-action@main
+#        # with:
+#          commitChange: false
+#          valueFile: "_config.yml"
+#          propertyPath: "giscus.repo"
+#          value: ${{ github.repository }}
+#      - name: Install and Build 🔧
+#        run: |
+#          gem install bundler
+#          bundle config set --local path 'vendor/bundle'
+#          bundle install --jobs 4 --retry 3
+#          pip3 install --upgrade jupyter
+#          export JEKYLL_ENV=production
+#          bundle exec jekyll build --baseurl "" --verbose --trace
+#      - name: Fix Permission (if needed)
+#        run: |
+#          chmod a+x bin/*
+#
+#      - name: Purge unused CSS 🧹
+#        run: |
+#          npm install -g purgecss
+#          purgecss -c purgecss.config.js
+#      - name: Deploy 🚀
+#        if: github.event_name != 'pull_request'
+#        uses: JamesIves/github-pages-deploy-action@v4
+#        with:
+#          folder: _site
