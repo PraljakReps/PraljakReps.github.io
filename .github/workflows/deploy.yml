@@ -72,6 +72,10 @@ jobs:
         with:
           ruby-version: "3.1.2"
           bundler-cache: true
+ 
+      - name: Upgrade RubyGems
+        run: gem update --system 3.5.18
+
 
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
